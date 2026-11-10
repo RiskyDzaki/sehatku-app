@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import {
-    Image,
-    SafeAreaView,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
 } from 'react-native';
 import DoctorCard from '../components/DoctorCard';
 import { DOCTORS_DATA } from '../data/doctorsData';
@@ -23,13 +23,13 @@ export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        {/* Navbar Header MEDArt */}
+        {/* Navbar Header SehatKu */}
         <View style={styles.navbar}>
           <View style={styles.brandRow}>
             <View style={styles.logoIcon}>
               <Text style={styles.logoCross}>+</Text>
             </View>
-            <Text style={styles.brandName}>MED<Text style={styles.brandNameBold}>Art</Text></Text>
+            <Text style={styles.brandName}>Sehat<Text style={styles.brandNameBold}>Ku</Text></Text>
           </View>
           <TouchableOpacity style={styles.profileBtn} onPress={() => navigation.navigate('Profile')}>
             <Text style={styles.profileBtnText}>Profil Saya</Text>
@@ -40,15 +40,15 @@ export default function HomeScreen({ navigation }) {
         <View style={styles.heroSection}>
           <View style={styles.heroTextContainer}>
             <Text style={styles.heroBadge}>Kesehatan & Medis</Text>
-            <Text style={styles.heroTitle}>The Best Medical Services</Text>
+            <Text style={styles.heroTitle}>Layanan Medis Terbaik</Text>
             <Text style={styles.heroSubtitle}>
-              Layanan medis terpercaya dengan dokter spesialis profesional dan jadwal yang fleksibel.
+              Layanan kesehatan terpercaya dengan dokter spesialis profesional dan jadwal konsultasi yang fleksibel.
             </Text>
             <TouchableOpacity
               style={styles.heroButton}
               onPress={() => navigation.navigate('Detail', { doctor: DOCTORS_DATA[0] })}
             >
-              <Text style={styles.heroButtonText}>Read More</Text>
+              <Text style={styles.heroButtonText}>Pelajari Lebih Lanjut</Text>
             </TouchableOpacity>
           </View>
 
@@ -62,28 +62,28 @@ export default function HomeScreen({ navigation }) {
         <View style={styles.quickCardsContainer}>
           {/* Card 1: Opening Hours */}
           <View style={styles.infoCard}>
-            <Text style={styles.cardHeaderTitle}>Opening Hours</Text>
+            <Text style={styles.cardHeaderTitle}>Jam Operasional</Text>
             <View style={styles.divider} />
             <View style={styles.scheduleRow}>
-              <Text style={styles.dayText}>Monday - Thursday</Text>
-              <Text style={styles.timeText}>8.00 - 19.00</Text>
+              <Text style={styles.dayText}>Senin - Kamis</Text>
+              <Text style={styles.timeText}>08.00 - 19.00</Text>
             </View>
             <View style={styles.scheduleRow}>
-              <Text style={styles.dayText}>Friday</Text>
-              <Text style={styles.timeText}>8.00 - 18.30</Text>
+              <Text style={styles.dayText}>Jumat</Text>
+              <Text style={styles.timeText}>08.00 - 18.30</Text>
             </View>
             <View style={styles.scheduleRow}>
-              <Text style={styles.dayText}>Saturday</Text>
-              <Text style={styles.timeText}>9.30 - 17.00</Text>
+              <Text style={styles.dayText}>Sabtu</Text>
+              <Text style={styles.timeText}>09.30 - 17.00</Text>
             </View>
           </View>
 
           {/* Card 2: Emergency Call */}
           <View style={[styles.infoCard, styles.emergencyCard]}>
-            <Text style={styles.cardHeaderTitle}>Emergency</Text>
+            <Text style={styles.cardHeaderTitle}>Panggilan Darurat</Text>
             <View style={styles.divider} />
             <TouchableOpacity style={styles.callBadge}>
-              <Text style={styles.callBadgeText}>📞 +34 586 778 8892</Text>
+              <Text style={styles.callBadgeText}>📞 1500-123 (SehatKu Care)</Text>
             </TouchableOpacity>
             <Text style={styles.emergencyDesc}>
               Layanan gawat darurat 24 jam siap melayani kebutuhan medis mendesak Anda.
@@ -98,6 +98,7 @@ export default function HomeScreen({ navigation }) {
           <TextInput
             style={styles.searchBar}
             placeholder="Cari dokter atau spesialisasi..."
+            placeholderTextColor="#94A3B8"
             value={search}
             onChangeText={setSearch}
           />
@@ -201,5 +202,7 @@ const styles = StyleSheet.create({
     marginBottom: 14,
     borderWidth: 1,
     borderColor: '#CBD5E1',
+    fontSize: 14,
+    color: '#0F172A',
   },
 });
