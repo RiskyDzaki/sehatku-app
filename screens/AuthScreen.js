@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
-  View,
+  KeyboardAvoidingView,
+  Platform,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
+  View,
 } from 'react-native';
 
 export default function AuthScreen({ navigation }) {
@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#007AFF',
     height: 48,
     borderRadius: 24,
-    justify.content: 'center',
+    justifyContent: 'center',
     alignItems: 'center',
     shadowColor: '#007AFF',
     shadowOffset: { width: 0, height: 4 },
